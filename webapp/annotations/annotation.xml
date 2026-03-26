@@ -1,0 +1,116 @@
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/UI.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/sap/ZSB_MRP_CONSOLIDATED_RPT/$metadata">
+        <edmx:Include Namespace="cds_zsd_mrp_consolidated_report" Alias="SAP"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="local">
+
+            <Annotations Target="cds_zsd_mrp_consolidated_report.ZMRP_CONSOLIDATED_REPORTType">
+                <!-- <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>Material</PropertyPath>
+                        <PropertyPath>Plant</PropertyPath>
+                        <PropertyPath>MRPDate</PropertyPath>
+                        <PropertyPath>MRPElement</PropertyPath>
+                    </Collection>
+                </Annotation> -->
+
+                
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Material"/>
+                            <PropertyValue Property="Label" String="{@i18n>material}"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="MRPDate"/>
+                            <PropertyValue Property="Label" String="{@i18n>dateRange}"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="MRPElement"/>
+                            <PropertyValue Property="Label" String="{@i18n>mrpElement}"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="MRPPlanningSegment"/>
+                            <PropertyValue Property="Label" String="{@i18n>mrpElementData1}"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="ReceiptRequirement"/>
+                            <PropertyValue Property="Label" String="{@i18n>receiptrequirement}"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Stock"/>
+                            <PropertyValue Property="Label" String="{@i18n>stock}"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="AvailableQty"/>
+                            <PropertyValue Property="Label" String="{@i18n>availableQty}"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+
+                <!-- <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#idGenInfo"/>
+                            <PropertyValue Property="Label" String="Mrp Consolidated Report"/>
+                            <PropertyValue Property="ID" String="idGenInfo"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.FieldGroup" Qualifier="idGenInfo">
+                    <Record Type="UI.FieldGroupType">
+                        <PropertyValue Property="Data">
+                            <Collection>
+                               <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="MRPDate"/>
+                                    <PropertyValue Property="Label" String="{@i18n>mrpDate}"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="MRPElement"/>
+                                    <PropertyValue Property="Label" String="{@i18n>mrpElement}"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="ElementData"/>
+                                    <PropertyValue Property="Label" String="{@i18n>mrpElementData}"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="ReceiptRequirement"/>
+                                    <PropertyValue Property="Label" String="{@i18n>receiptrequirement}"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="Stock"/>
+                                    <PropertyValue Property="Label" String="{@i18n>stock}"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="AvailableQty"/>
+                                    <PropertyValue Property="Label" String="{@i18n>availableQty}"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>  
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.HeaderInfo">
+                    <Record Type="UI.HeaderInfoType">
+                        <PropertyValue Property="TypeName" String="Mrp Consolidated Report"/>
+                        <PropertyValue Property="TypeNamePlural" String="MRP Consolidated"/>
+                        <PropertyValue Property="Title">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Value" Path="Material"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation> -->
+            </Annotations>
+            <Annotations Target="cds_zsd_mrp_consolidated_report.ZMRP_CONSOLIDATED_REPORTType/MRPDate">
+                <Annotation Term="Common.Label" String="{@i18n>dateRange}"/>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
